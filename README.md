@@ -1,21 +1,29 @@
-[![Build Status](https://dev.azure.com/ss22534/22-23_CE9x3-SP_team03/_apis/build/status/22-23_CE9x3-SP_team03-Docker%20container-CI?branchName=feature%2Ffrontend)](https://dev.azure.com/ss22534/22-23_CE9x3-SP_team03/_build/latest?definitionId=1&branchName=feature%2Ffrontend)
+# Smart Home Web
 
-### Public IP
-[20.203.177.44](http://20.203.177.44)
+## Description
 
-### Public FQDN
-[http://team3.switzerlandnorth.cloudapp.azure.com](http://team3.switzerlandnorth.cloudapp.azure.com)
+The Smart Home System is a web-based application designed to control various smart devices within a home environment. This project demonstrates the integration of smart devices and offers an intuitive user interface to manage and monitor these devices remotely.
 
-### Domain
-[https://nftwork.social](https://nftwork.social)
+## Features
 
-### API
-[https://api.nftwork.social](https://api.nftwork.social)
+- Device Control
+- Automation
+- Real-time Monitoring
+- User Authentication
 
-### Home-assistant Server
-[https://home-assistant.nftwork.social](https://home-assistant.nftwork.social)
 
-### Dev Setup
-```
-$ docker compose -f devop/dev.docker-compose.yml up
-```
+## Technologies Used
+
+- TypeScript
+- JavaScript
+- CSS
+- HTML
+- Node.js
+- Express.js
+
+
+## Installation
+
+1. Clone this repository.
+   ```bash
+   git clone https://github.com/yourusername/smart-home.git
