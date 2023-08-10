@@ -1,0 +1,24 @@
+  bedroom_light1:
+    name: Bedroom Light 1
+    initial: off
+    icon: mdi:lightbulb
+  bedroom_light2:
+    name: Bedroom Light 2
+    initial: off
+    icon: mdi:lightbulb
+  kitchen_light:
+    name: Kitchen Light
+    initial: off
+    icon: mdi:lightbulb
+  kitchen_fan1:
+    name: Kitchen Fan 1
+    initial: off
+    icon: mdi:ceiling-fan
+  kitchen_fan2:
+    name: Kitchen Fan 2
+    initial: off
+    icon: mdi:ceiling-fan
+  garage_door:
+    name: Garage Door
+    initial: off
+    icon: mdi:garage

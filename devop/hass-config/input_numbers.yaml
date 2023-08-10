@@ -1,0 +1,10 @@
+  thermostat:
+    icon: mdi:thermostat
+    name: Thermostat
+    min: 18
+    max: 30
+  humidifier:
+    icon: mdi:air-humidifier
+    name: Humidifier
+    min: 40
+    max: 60

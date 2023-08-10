@@ -1,0 +1,76 @@
+version: '3'
+
+services:
+  web:
+    image: team3registry.azurecr.io/22-23_ce9x3-sp_team03/web
+    container_name: web
+    build:
+      context: ../
+      dockerfile: ./devop/web.Dockerfile
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ~/.team3config/nftwork.social-ssl-bundle/:/ssl/:ro
+    restart: always
+    networks:
+      - team3network
+    depends_on:
+      - api01
+      - api02
+
+  api01:
+    image: team3registry.azurecr.io/22-23_ce9x3-sp_team03/api
+    container_name: api01
+    build:
+      context: ../
+      dockerfile: ./devop/api.Dockerfile
+    env_file:
+      - ~/.team3config/.env
+    restart: always
+    privileged: true
+    # cap_add:
+    #   - SYS_ADMIN
+    # devices:
+    #   - /dev/fuse
+    command: npm run start-log
+    networks:
+      - team3network
+
+  api02:
+    image: team3registry.azurecr.io/22-23_ce9x3-sp_team03/api
+    container_name: api02
+    build:
+      context: ../
+      dockerfile: ./devop/api.Dockerfile
+    env_file:
+      - ~/.team3config/.env
+    restart: always
+    privileged: true
+    command: npm run start-log
+    networks:
+      - team3network
+
+  homeassistant:
+    image: ghcr.io/home-assistant/home-assistant:stable
+    container_name: homeassistant
+    volumes:
+      - ~/.team3config/homeassistant:/config
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    networks:
+      - team3network
+
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ~/.docker/config.json:/config.json
+    command: web
+    networks:
+      - team3network
+
+networks:
+  team3network:
+    name: team3network

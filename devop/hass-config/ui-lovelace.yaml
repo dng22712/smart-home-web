@@ -1,0 +1,18 @@
+title: Dashboard
+views:
+  - title: Main
+    cards:
+      - type: entities
+        entities:
+          - input_boolean.bedroom_light1
+          - input_boolean.bedroom_light2
+          - input_boolean.kitchen_fan1
+          - input_boolean.kitchen_fan2
+          - input_boolean.kitchen_light
+        title: Lights
+      - type: gauge
+        entity: input_number.thermostat
+      - type: gauge
+        entity: input_number.humidifier
+      - type: entity
+        entity: 'input_boolean.garage_door'
