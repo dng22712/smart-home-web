@@ -15,6 +15,7 @@ The Smart Home System is a web-based application designed to control various sma
 ## Technologies Used
 
 - TypeScript
+- Open AI
 - JavaScript
 - CSS
 - HTML
